@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sitio web corporativo para Centralized Code LLC - Servicios IT y Marketing Digital",
   "private": true,
+  "homepage": "https://alexis910505.github.io/centralicecode",
   "dependencies": {
     "framer-motion": "^10.16.4",
     "i18next": "^25.2.1",
@@ -18,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +49,8 @@
     "centralized-code"
   ],
   "author": "Centralized Code LLC",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
