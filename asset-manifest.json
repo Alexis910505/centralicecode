@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/centralicecode/static/css/main.fc85c061.css",
-    "main.js": "/centralicecode/static/js/main.cf418541.js",
-    "index.html": "/centralicecode/index.html",
-    "main.fc85c061.css.map": "/centralicecode/static/css/main.fc85c061.css.map",
-    "main.cf418541.js.map": "/centralicecode/static/js/main.cf418541.js.map"
+    "main.css": "/static/css/main.fc85c061.css",
+    "main.js": "/static/js/main.cf418541.js",
+    "index.html": "/index.html",
+    "main.fc85c061.css.map": "/static/css/main.fc85c061.css.map",
+    "main.cf418541.js.map": "/static/js/main.cf418541.js.map"
   },
   "entrypoints": [
     "static/css/main.fc85c061.css",
