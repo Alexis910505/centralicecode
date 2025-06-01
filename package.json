@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sitio web corporativo para Centralized Code LLC - Servicios IT y Marketing Digital",
   "private": true,
-  "homepage": "https://alexis910505.github.io/centralicecode",
+  "homepage": "https://censtacks.com",
   "dependencies": {
     "framer-motion": "^10.16.4",
     "i18next": "^25.2.1",
