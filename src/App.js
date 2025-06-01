@@ -5,6 +5,8 @@ import Hero from './components/Hero/Hero';
 import Services from './components/Services/Services';
 import Stats from './components/Stats/Stats';
 import About from './components/About/About';
+import Portfolio from './components/Portfolio/Portfolio';
+import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import GoogleAnalytics from './components/GoogleAnalytics/GoogleAnalytics';
@@ -27,6 +29,8 @@ function App() {
         <Services />
         <Stats />
         <About />
+        <Portfolio />
+        <Testimonials />
         <Contact />
         <Footer />
       </div>
