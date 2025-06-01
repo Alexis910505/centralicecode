@@ -1,0 +1,114 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Transforming Your Business Digitally",
+    "subtitle": "Specialists in IT services and social media marketing. We take your company to the next level with innovative technological solutions and effective digital strategies.",
+    "cta_services": "Our Services",
+    "cta_contact": "Contact"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your company's digital growth",
+    "it_title": "IT Services",
+    "marketing_title": "Digital Marketing",
+    "it_services": {
+      "cloud": {
+        "title": "Cloud Infrastructure",
+        "description": "Cloud services migration and management (AWS, Azure, Google Cloud)"
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "description": "Comprehensive protection of business data and systems"
+      },
+      "development": {
+        "title": "Software Development",
+        "description": "Custom web and mobile applications"
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "24/7 maintenance and support for your infrastructure"
+      }
+    },
+    "marketing_services": {
+      "social_media": {
+        "title": "Social Media Management",
+        "description": "Professional management of Facebook, Instagram, LinkedIn and more"
+      },
+      "advertising": {
+        "title": "Digital Advertising",
+        "description": "Effective campaigns on Google Ads, Facebook Ads and other platforms"
+      },
+      "seo": {
+        "title": "SEO & Analytics",
+        "description": "Search engine optimization and performance analysis"
+      },
+      "content": {
+        "title": "Content Creation",
+        "description": "Strategic content marketing for all platforms"
+      }
+    }
+  },
+  "stats": {
+    "clients": "Satisfied Clients",
+    "projects": "Completed Projects",
+    "support": "Technical Support",
+    "experience": "Years of Experience"
+  },
+  "about": {
+    "title": "About Centralized Code",
+    "description": "We are a leading company in technological solutions and digital marketing, committed to our clients' success. Our team of experts combines years of experience in technology with the latest trends in digital marketing.",
+    "features": {
+      "certified": "Certified and experienced team",
+      "custom": "Customized solutions",
+      "support": "Continuous support",
+      "results": "Measurable results"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to transform your business? Let's talk about your project",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Select a service",
+      "service_options": {
+        "placeholder": "Select a service",
+        "it": "IT Services",
+        "marketing": "Digital Marketing",
+        "both": "Both services"
+      },
+      "message": "Tell us about your project",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "errors": {
+        "name_required": "Name is required",
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email",
+        "service_required": "Select a service",
+        "message_required": "Message is required"
+      },
+      "notifications": {
+        "success": "Message sent successfully! We will contact you soon.",
+        "error": "Error sending message. Please try again."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Centralized Code LLC. All rights reserved."
+  },
+  "language": {
+    "spanish": "Español",
+    "english": "English"
+  }
+} 

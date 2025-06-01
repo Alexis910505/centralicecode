@@ -1,0 +1,114 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Transformamos tu Negocio Digitalmente",
+    "subtitle": "Especialistas en servicios IT y marketing de redes sociales. Llevamos tu empresa al siguiente nivel con soluciones tecnológicas innovadoras y estrategias digitales efectivas.",
+    "cta_services": "Nuestros Servicios",
+    "cta_contact": "Contactar"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales para el crecimiento digital de tu empresa",
+    "it_title": "Servicios IT",
+    "marketing_title": "Marketing Digital",
+    "it_services": {
+      "cloud": {
+        "title": "Infraestructura en la Nube",
+        "description": "Migración y gestión de servicios cloud (AWS, Azure, Google Cloud)"
+      },
+      "security": {
+        "title": "Ciberseguridad",
+        "description": "Protección integral de datos y sistemas empresariales"
+      },
+      "development": {
+        "title": "Desarrollo de Software",
+        "description": "Aplicaciones web y móviles personalizadas"
+      },
+      "support": {
+        "title": "Soporte Técnico",
+        "description": "Mantenimiento y soporte 24/7 para tu infraestructura"
+      }
+    },
+    "marketing_services": {
+      "social_media": {
+        "title": "Gestión de Redes Sociales",
+        "description": "Administración profesional de Facebook, Instagram, LinkedIn y más"
+      },
+      "advertising": {
+        "title": "Publicidad Digital",
+        "description": "Campañas efectivas en Google Ads, Facebook Ads y otras plataformas"
+      },
+      "seo": {
+        "title": "SEO y Analytics",
+        "description": "Optimización para motores de búsqueda y análisis de rendimiento"
+      },
+      "content": {
+        "title": "Creación de Contenido",
+        "description": "Content marketing estratégico para todas las plataformas"
+      }
+    }
+  },
+  "stats": {
+    "clients": "Clientes Satisfechos",
+    "projects": "Proyectos Completados",
+    "support": "Soporte Técnico",
+    "experience": "Años de Experiencia"
+  },
+  "about": {
+    "title": "Sobre Centralized Code",
+    "description": "Somos una empresa líder en soluciones tecnológicas y marketing digital, comprometida con el éxito de nuestros clientes. Nuestro equipo de expertos combina años de experiencia en tecnología con las últimas tendencias en marketing digital.",
+    "features": {
+      "certified": "Equipo certificado y experimentado",
+      "custom": "Soluciones personalizadas", 
+      "support": "Soporte continuo",
+      "results": "Resultados medibles"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Listo para transformar tu negocio? Hablemos sobre tu proyecto",
+    "info": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    },
+    "form": {
+      "name": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "service": "Selecciona un servicio",
+      "service_options": {
+        "placeholder": "Selecciona un servicio",
+        "it": "Servicios IT",
+        "marketing": "Marketing Digital",
+        "both": "Ambos servicios"
+      },
+      "message": "Cuéntanos sobre tu proyecto",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "errors": {
+        "name_required": "El nombre es requerido",
+        "email_required": "El email es requerido",
+        "email_invalid": "Email inválido",
+        "service_required": "Selecciona un servicio",
+        "message_required": "El mensaje es requerido"
+      },
+      "notifications": {
+        "success": "¡Mensaje enviado exitosamente! Te contactaremos pronto.",
+        "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Centralized Code LLC. Todos los derechos reservados."
+  },
+  "language": {
+    "spanish": "Español",
+    "english": "English"
+  }
+} 
