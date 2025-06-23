@@ -92,11 +92,16 @@
       "submit": "Enviar Mensaje",
       "submitting": "Enviando...",
       "errors": {
-        "name_required": "El nombre es requerido",
-        "email_required": "El email es requerido",
+        "name_required": "El nombre es obligatorio",
+        "name_min": "El nombre debe tener al menos 2 caracteres",
+        "name_max": "El nombre no puede exceder 50 caracteres",
+        "email_required": "El email es obligatorio",
         "email_invalid": "Email inválido",
+        "phone_invalid": "Formato de teléfono inválido",
         "service_required": "Selecciona un servicio",
-        "message_required": "El mensaje es requerido"
+        "message_required": "El mensaje es obligatorio",
+        "message_min": "El mensaje debe tener al menos 10 caracteres",
+        "message_max": "El mensaje no puede exceder 500 caracteres"
       },
       "notifications": {
         "success": "¡Mensaje enviado exitosamente! Te contactaremos pronto.",
@@ -106,6 +111,15 @@
   },
   "footer": {
     "copyright": "© 2024 Centralized Code LLC. Todos los derechos reservados."
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Testimonios de empresas que han confiado en nuestros servicios y han logrado resultados excepcionales"
+  },
+  "portfolio": {
+    "title": "Nuestro Portafolio",
+    "subtitle": "Descubre algunos de los proyectos exitosos que hemos completado para nuestros clientes",
+    "viewProject": "Ver Proyecto"
   },
   "language": {
     "spanish": "Español",

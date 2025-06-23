@@ -93,10 +93,15 @@
       "submitting": "Sending...",
       "errors": {
         "name_required": "Name is required",
+        "name_min": "Name must be at least 2 characters",
+        "name_max": "Name cannot exceed 50 characters",
         "email_required": "Email is required",
         "email_invalid": "Invalid email",
+        "phone_invalid": "Invalid phone number format",
         "service_required": "Select a service",
-        "message_required": "Message is required"
+        "message_required": "Message is required",
+        "message_min": "Message must be at least 10 characters",
+        "message_max": "Message cannot exceed 500 characters"
       },
       "notifications": {
         "success": "Message sent successfully! We will contact you soon.",
@@ -106,6 +111,15 @@
   },
   "footer": {
     "copyright": "© 2024 Centralized Code LLC. All rights reserved."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Testimonials from companies that have trusted our services and achieved exceptional results"
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Discover some of the successful projects we have completed for our clients",
+    "viewProject": "View Project"
   },
   "language": {
     "spanish": "Español",

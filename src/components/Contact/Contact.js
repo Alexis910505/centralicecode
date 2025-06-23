@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
+import emailjsConfig from '../../config/emailjs';
+import { trackContactForm } from '../../config/analytics';
 import './Contact.css';
 
 const Contact = () => {
@@ -50,12 +53,54 @@ const Contact = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     
-    // Simular envío del formulario
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Track form submission attempt
+      trackContactForm(data.servicio);
+      
+      // Verificar si EmailJS está configurado
+      if (emailjsConfig.publicKey === 'your_public_key_here') {
+        // Simulación temporal mientras se configura EmailJS
+        console.log('📧 Simulando envío de email (EmailJS no configurado):', {
+          nombre: data.nombre,
+          email: data.email,
+          telefono: data.telefono || 'No proporcionado',
+          servicio: data.servicio,
+          mensaje: data.mensaje
+        });
+        
+        // Simular delay de envío
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        showNotification(
+          '✅ Formulario validado correctamente. Configura EmailJS para envío real.', 
+          'success'
+        );
+        reset();
+        return;
+      }
+
+      // Configuración de EmailJS (cuando esté configurado)
+      const templateParams = {
+        from_name: data.nombre,
+        from_email: data.email,
+        from_phone: data.telefono || 'No proporcionado',
+        service_type: data.servicio,
+        message: data.mensaje,
+        to_email: 'centralizedcode@gmail.com'
+      };
+
+      // Enviar correo usando EmailJS
+      await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        templateParams,
+        emailjsConfig.publicKey
+      );
+
       showNotification(t('contact.form.notifications.success'), 'success');
       reset();
     } catch (error) {
+      console.error('Error enviando correo:', error);
       showNotification(t('contact.form.notifications.error'), 'error');
     } finally {
       setIsSubmitting(false);
@@ -151,7 +196,17 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder={t('contact.form.name')}
-                  {...register('nombre', { required: t('contact.form.errors.name_required') })}
+                  {...register('nombre', { 
+                    required: t('contact.form.errors.name_required'),
+                    minLength: {
+                      value: 2,
+                      message: t('contact.form.errors.name_min')
+                    },
+                    maxLength: {
+                      value: 50,
+                      message: t('contact.form.errors.name_max')
+                    }
+                  })}
                   className={errors.nombre ? 'error' : ''}
                 />
                 {errors.nombre && <span className="error-message">{errors.nombre.message}</span>}
@@ -177,8 +232,15 @@ const Contact = () => {
                 <input
                   type="tel"
                   placeholder={t('contact.form.phone')}
-                  {...register('telefono')}
+                  {...register('telefono', {
+                    pattern: {
+                      value: /^[+]?[\d\s\-()]{10,}$/,
+                      message: t('contact.form.errors.phone_invalid')
+                    }
+                  })}
+                  className={errors.telefono ? 'error' : ''}
                 />
+                {errors.telefono && <span className="error-message">{errors.telefono.message}</span>}
               </div>
               
               <div className="form-group">
@@ -198,7 +260,17 @@ const Contact = () => {
                 <textarea
                   placeholder={t('contact.form.message')}
                   rows="5"
-                  {...register('mensaje', { required: t('contact.form.errors.message_required') })}
+                  {...register('mensaje', { 
+                    required: t('contact.form.errors.message_required'),
+                    minLength: {
+                      value: 10,
+                      message: t('contact.form.errors.message_min')
+                    },
+                    maxLength: {
+                      value: 500,
+                      message: t('contact.form.errors.message_max')
+                    }
+                  })}
                   className={errors.mensaje ? 'error' : ''}
                 ></textarea>
                 {errors.mensaje && <span className="error-message">{errors.mensaje.message}</span>}
