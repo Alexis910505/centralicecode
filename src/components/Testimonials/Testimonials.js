@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import './Testimonials.css';
 
 const Testimonials = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -141,7 +141,7 @@ const Testimonials = () => {
                 </div>
                 
                 <p className="testimonial-text">
-                  {current.content[t('language')] || current.content.en}
+                  {current.content[i18n.language] || current.content.en}
                 </p>
                 
                 <div className="testimonial-rating">

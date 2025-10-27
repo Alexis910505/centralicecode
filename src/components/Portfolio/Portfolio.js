@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import './Portfolio.css';
 
 const Portfolio = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeFilter, setActiveFilter] = useState('all');
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -13,25 +13,6 @@ const Portfolio = () => {
   });
 
   const projects = [
-    {
-      id: 1,
-      title: {
-        en: "E-commerce Platform",
-        es: "Plataforma E-commerce"
-      },
-      description: {
-        en: "Complete online store with payment integration and inventory management",
-        es: "Tienda online completa con integración de pagos y gestión de inventario"
-      },
-      category: "web-development",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      results: {
-        en: "300% increase in sales",
-        es: "300% aumento en ventas"
-      },
-      link: "#"
-    },
     {
       id: 2,
       title: {
@@ -73,21 +54,40 @@ const Portfolio = () => {
     {
       id: 4,
       title: {
-        en: "Corporate Website",
-        es: "Sitio Web Corporativo"
+        en: "Galarraga LLC - Pediatric Clinic Website",
+        es: "Galarraga LLC - Sitio Web de Clínica Pediátrica"
       },
       description: {
-        en: "Professional corporate website with content management system",
-        es: "Sitio web corporativo profesional con sistema de gestión de contenido"
+        en: "Bilingual (Spanish/English) website for Dr. Yolanda A. Galarraga Ramirez MD PA",
+        es: "Sitio web bilingüe (Español/Inglés) para la Dra. Yolanda A. Galarraga Ramirez MD PA"
       },
       category: "web-development",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-      technologies: ["WordPress", "Custom Theme", "SEO", "Analytics"],
+      image: "/images/hero_image.jpg",
+      technologies: ["React.js 18.2.0", "JavaScript ES6+", "CSS3", "react-i18next", "GitHub Pages"],
       results: {
-        en: "Enhanced brand presence",
-        es: "Mejor presencia de marca"
+        en: "Professional medical presence",
+        es: "Presencia médica profesional"
       },
-      link: "#"
+      link: "https://www.galarragamd.com"
+    },
+    {
+      id: 7,
+      title: {
+        en: "Galarraga Research - Medical Research Landing Page",
+        es: "Galarraga Research - Landing Page de Investigación Médica"
+      },
+      description: {
+        en: "Bilingual landing page to access medical research, with article search, clinical trials and scientific reviews",
+        es: "Landing bilingüe para acceder a investigaciones médicas, con buscador de artículos, ensayos clínicos y revisiones científicas"
+      },
+      category: "web-development",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+      technologies: ["HTML5", "CSS3 (ITCSS y BEM)", "JavaScript ES6+", "i18n personalizado", "GitHub Pages"],
+      results: {
+        en: "Efficient research access",
+        es: "Acceso eficiente a investigación"
+      },
+      link: "https://www.drgalallc.com/"
     },
     {
       id: 5,
@@ -187,7 +187,7 @@ const Portfolio = () => {
               className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter.key)}
             >
-              {filter.label[t('language')] || filter.label.en}
+              {filter.label[i18n.language] || filter.label.en}
             </button>
           ))}
         </motion.div>
@@ -212,11 +212,11 @@ const Portfolio = () => {
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
                 <div className="project-image">
-                  <img src={project.image} alt={project.title[t('language')] || project.title.en} />
+                  <img src={project.image} alt={project.title[i18n.language] || project.title.en} />
                   <div className="project-overlay">
                     <div className="overlay-content">
-                      <h3>{project.title[t('language')] || project.title.en}</h3>
-                      <p>{project.description[t('language')] || project.description.en}</p>
+                      <h3>{project.title[i18n.language] || project.title.en}</h3>
+                      <p>{project.description[i18n.language] || project.description.en}</p>
                       <div className="project-technologies">
                         {project.technologies.map((tech, index) => (
                           <span key={index} className="tech-tag">{tech}</span>
@@ -224,10 +224,12 @@ const Portfolio = () => {
                       </div>
                       <div className="project-results">
                         <i className="fas fa-chart-line"></i>
-                        <span>{project.results[t('language')] || project.results.en}</span>
+                        <span>{project.results[i18n.language] || project.results.en}</span>
                       </div>
                       <motion.a
                         href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="project-link"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
