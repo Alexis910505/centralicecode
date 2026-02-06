@@ -150,18 +150,6 @@ const Portfolio = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  const handleGalleryNavigate = (projectId, direction, total) => {
-    setActiveImages(prev => {
-      const current = prev[projectId] ?? 0;
-      const next = (current + direction + total) % total;
-      return { ...prev, [projectId]: next };
-    });
-  };
-
-  const handleThumbnailSelect = (projectId, index) => {
-    setActiveImages(prev => ({ ...prev, [projectId]: index }));
-  };
-
   const handleViewProject = (project, event) => {
     if (project.images && project.images.length > 0) {
       event.preventDefault();
@@ -238,14 +226,24 @@ const Portfolio = () => {
 
   useEffect(() => {
     if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove);
+      const handleMove = (e) => {
+        if (isDragging && imageZoom.scale > 1) {
+          setImageZoom(prev => ({
+            ...prev,
+            x: e.clientX - dragStart.x,
+            y: e.clientY - dragStart.y
+          }));
+        }
+      };
+      
+      document.addEventListener('mousemove', handleMove);
       document.addEventListener('mouseup', handleMouseUp);
       return () => {
-        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mousemove', handleMove);
         document.removeEventListener('mouseup', handleMouseUp);
       };
     }
-  }, [isDragging, dragStart]);
+  }, [isDragging, dragStart, imageZoom.scale]);
 
   useEffect(() => {
     if (galleryModal) {
