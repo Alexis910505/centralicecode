@@ -206,16 +206,6 @@ const Portfolio = () => {
     }
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging && imageZoom.scale > 1) {
-      setImageZoom(prev => ({
-        ...prev,
-        x: e.clientX - dragStart.x,
-        y: e.clientY - dragStart.y
-      }));
-    }
-  };
-
   const handleMouseUp = () => {
     setIsDragging(false);
   };
