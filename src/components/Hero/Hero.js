@@ -84,17 +84,29 @@ const Hero = () => {
           }}
         >
           <div className="hero-graphic">
-            <motion.i 
-              className="fas fa-laptop-code"
-              animate={{ 
-                rotateY: [0, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
+            <motion.div className="hero-logo-container">
+              <motion.img 
+                src="/images/logo.png"
+                alt="Centralized Code"
+                className="hero-logo"
+                animate={{ 
+                  rotateY: [0, 360],
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  rotateY: {
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "linear"
+                  },
+                  scale: {
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                }}
+              />
+            </motion.div>
           </div>
         </motion.div>
       </div>
