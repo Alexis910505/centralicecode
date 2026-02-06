@@ -17,7 +17,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-logo">
-            <i className="fas fa-code"></i>
+            <img src="/images/logo.png" alt="Centralized Code" className="footer-logo-img" />
             <span>Centralized Code LLC</span>
           </div>
           <p>{t('footer.copyright')}</p>

@@ -36,10 +36,13 @@
     transform: scale(1.05);
 }
 
-.footer-logo i {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    animation: pulse-glow 2s ease-in-out infinite;
+.footer-logo-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
 }
 
 .footer p {
@@ -48,18 +51,10 @@
     font-size: 0.95rem;
 }
 
-@keyframes pulse-glow {
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px var(--secondary-color));
-    }
-    50% {
-        transform: scale(1.1);
-        filter: drop-shadow(0 0 10px var(--secondary-color));
-    }
+.footer-logo:hover .footer-logo-img {
+    transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
     .footer {
         padding: 30px 0;
@@ -69,8 +64,9 @@
         font-size: 1.2rem;
     }
     
-    .footer-logo i {
-        font-size: 1.3rem;
+    .footer-logo-img {
+        height: 30px;
+        width: 30px;
     }
     
     .footer p {

@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('inicio')}>
-          <i className="fas fa-code"></i>
+          <img src="/images/logo.png" alt="Centralized Code" className="logo-img" />
           <span>Centralized Code</span>
         </div>
         

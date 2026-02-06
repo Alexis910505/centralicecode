@@ -87,28 +87,14 @@
     cursor: pointer;
 }
 
-.about-graphic::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent);
-    animation: rotate 6s linear infinite;
-}
-
-.about-graphic i {
-    font-size: 4rem;
-    color: white;
+.about-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: relative;
     z-index: 2;
+    border-radius: 20px;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }
 
 /* Responsive Design */
@@ -137,8 +123,9 @@
         height: 200px;
     }
     
-    .about-graphic i {
-        font-size: 3rem;
+    .about-logo {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -163,7 +150,8 @@
         height: 180px;
     }
     
-    .about-graphic i {
-        font-size: 2.5rem;
+    .about-logo {
+        width: 100%;
+        height: 100%;
     }
 } 

@@ -83,20 +83,13 @@ const About = () => {
               className="about-graphic"
               whileHover={{ 
                 scale: 1.05,
-                rotateY: 15,
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.i 
-                className="fas fa-building"
-                animate={{ 
-                  rotateY: [0, 10, -10, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+              <motion.img 
+                src="/images/logo.png"
+                alt="Centralized Code"
+                className="about-logo"
               />
             </motion.div>
           </motion.div>

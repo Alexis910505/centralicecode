@@ -39,8 +39,16 @@
     transform: scale(1.05);
 }
 
-.nav-logo i {
-    font-size: 1.8rem;
+.nav-logo .logo-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover .logo-img {
+    transform: scale(1.1);
 }
 
 .nav-menu {
@@ -117,7 +125,6 @@
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -157,5 +164,14 @@
 
     .nav-actions {
         gap: 10px;
+    }
+
+    .nav-logo .logo-img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .nav-logo span {
+        font-size: 1.2rem;
     }
 } 

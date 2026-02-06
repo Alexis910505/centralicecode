@@ -112,14 +112,14 @@
   "footer": {
     "copyright": "© 2024 Centralized Code LLC. Todos los derechos reservados."
   },
-  "testimonials": {
-    "title": "Lo Que Dicen Nuestros Clientes",
-    "subtitle": "Testimonios de empresas que han confiado en nuestros servicios y han logrado resultados excepcionales"
-  },
   "portfolio": {
     "title": "Nuestro Portafolio",
     "subtitle": "Descubre algunos de los proyectos exitosos que hemos completado para nuestros clientes",
-    "viewProject": "Ver Proyecto"
+    "viewProject": "Ver Proyecto",
+    "previousImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "viewImage": "Ver imagen",
+    "viewGallery": "Ver Galería"
   },
   "language": {
     "spanish": "Español",
