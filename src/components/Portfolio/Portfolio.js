@@ -43,7 +43,7 @@ const Portfolio = () => {
         en: "Live Square-synced booking engine, own domain & CI/CD",
         es: "Motor de reservas en vivo sincronizado con Square, dominio propio y CI/CD"
       },
-      link: "https://onyxmobiledetailers.com"
+      link: "https://www.onyxmobiledetailers.com/"
     },
     {
       id: 8,
@@ -573,30 +573,45 @@ const Portfolio = () => {
                         <i className="fas fa-chart-line"></i>
                         <span>{project.results[i18n.language] || project.results.en}</span>
                       </div>
-                      {project.images && project.images.length > 0 ? (
-                        <motion.button
-                          type="button"
-                          className="project-link"
-                          onClick={(e) => handleViewProject(project, e)}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <i className="fas fa-images"></i>
-                          {t('portfolio.viewGallery', { defaultValue: 'Ver Galería' })}
-                        </motion.button>
-                      ) : (
-                        <motion.a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="project-link"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <i className="fas fa-external-link-alt"></i>
-                          {t('portfolio.viewProject')}
-                        </motion.a>
-                      )}
+                      <div className="project-actions">
+                        {project.images && project.images.length > 0 ? (
+                          <motion.button
+                            type="button"
+                            className="project-link"
+                            onClick={(e) => handleViewProject(project, e)}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <i className="fas fa-images"></i>
+                            {t('portfolio.viewGallery', { defaultValue: 'Ver Galería' })}
+                          </motion.button>
+                        ) : (
+                          <motion.a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <i className="fas fa-external-link-alt"></i>
+                            {t('portfolio.viewProject')}
+                          </motion.a>
+                        )}
+                        {project.images && project.images.length > 0 && project.link && project.link !== '#' && (
+                          <motion.a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link project-link-secondary"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <i className="fas fa-external-link-alt"></i>
+                            {t('portfolio.viewProject')}
+                          </motion.a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
