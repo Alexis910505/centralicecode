@@ -1,0 +1,14 @@
+{
+  "name": "onyx-screenshots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "capture.mjs",
+  "type": "module",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.49.1"
+  }
+}

@@ -14,6 +14,38 @@ const Portfolio = () => {
 
   const projects = useMemo(() => [
     {
+      id: 13,
+      title: {
+        en: "Onyx Mobile Detailing — Booking & Operations Platform",
+        es: "Onyx Mobile Detailing — Plataforma de reservas y operación"
+      },
+      description: {
+        en: "Onyx Mobile Detailing is a production Next.js 16 application built end-to-end for a real mobile detailing business: a bilingual marketing site, a 5-step booking wizard backed by live Square availability with an online-or-pay-later checkout choice, and a full admin back office — all kept in sync with the owner's Square app, deployed with its own domain and CI/CD.",
+        es: "Onyx Mobile Detailing es una aplicación Next.js 16 en producción, construida de punta a punta para un negocio real de detailing móvil: sitio bilingüe, wizard de reserva con disponibilidad real de Square y pago en línea o después del trabajo, y panel de administración completo — todo sincronizado con la app de Square del dueño, desplegado con dominio propio y CI/CD."
+      },
+      category: "web-development",
+      images: [
+        "/images/Onyx/01-home.png",
+        "/images/Onyx/02-services.png",
+        "/images/Onyx/03-add-ons.png",
+        "/images/Onyx/04-gallery.png",
+        "/images/Onyx/05-about.png",
+        "/images/Onyx/06-contact.png",
+        "/images/Onyx/07-home-es.png",
+        "/images/Onyx/08-book-step1-vehicle.png",
+        "/images/Onyx/09-book-step2-addons.png",
+        "/images/Onyx/10-book-step3-datetime.png",
+        "/images/Onyx/11-sign-in.png",
+        "/images/Onyx/12-admin-login.png"
+      ],
+      technologies: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "Square API", "NextAuth", "Tailwind"],
+      results: {
+        en: "Live Square-synced booking engine, own domain & CI/CD",
+        es: "Motor de reservas en vivo sincronizado con Square, dominio propio y CI/CD"
+      },
+      link: "https://onyxmobiledetailers.com"
+    },
+    {
       id: 8,
       title: {
         en: "TaskForge — Work-order & Operations SaaS",
