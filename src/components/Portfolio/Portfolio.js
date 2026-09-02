@@ -46,6 +46,46 @@ const Portfolio = () => {
       link: "https://www.onyxmobiledetailers.com/"
     },
     {
+      id: 14,
+      title: {
+        en: "Kido EdTech — Teacher Console",
+        es: "Kido EdTech — Consola Docente"
+      },
+      description: {
+        en: "Kido is a K-12 education platform with a Next.js teacher console and a Flutter mobile app sharing one Firebase backend. Plan units (UbD: annual plan → unit → lesson → board), run a live gradebook that feeds an auto-generated report card, and message entire classes — all in real time via Firestore, with instantly-switchable EN/ES/PT localization and a Zoom OAuth integration for video classes.",
+        es: "Kido es una plataforma educativa K-12 con una consola docente en Next.js y una app móvil en Flutter sobre un mismo backend Firebase. Permite planificar unidades (UbD: plan anual → unidad → lección → tablero), llevar una libreta de calificaciones en vivo que alimenta un boletín automático, y comunicarse con las clases — todo en tiempo real vía Firestore, con localización EN/ES/PT de cambio instantáneo e integración OAuth con Zoom para videoclases."
+      },
+      category: "web-development",
+      images: [
+        "/images/Kido/01-login.png",
+        "/images/Kido/02-sign-up.png",
+        "/images/Kido/03-forgot-password.png",
+        "/images/Kido/04-dashboard-home.png",
+        "/images/Kido/05-messages.png",
+        "/images/Kido/06-calendar.png",
+        "/images/Kido/07-schedule.png",
+        "/images/Kido/08-forum.png",
+        "/images/Kido/09-chat.png",
+        "/images/Kido/10-planning.png",
+        "/images/Kido/11-subjects.png",
+        "/images/Kido/12-groups.png",
+        "/images/Kido/13-classes.png",
+        "/images/Kido/14-notes.png",
+        "/images/Kido/15-gradebook.png",
+        "/images/Kido/16-report-card.png",
+        "/images/Kido/17-whiteboard.png",
+        "/images/Kido/18-profile.png",
+        "/images/Kido/19-settings.png",
+        "/images/Kido/20-help.png"
+      ],
+      technologies: ["Next.js 16", "TypeScript", "Tailwind", "Firebase", "Flutter", "Cloud Functions"],
+      results: {
+        en: "Live-synced teacher console + mobile app, one shared Firebase backend",
+        es: "Consola docente + app móvil en vivo, un mismo backend Firebase"
+      },
+      link: "https://www.kidoedtech.com/"
+    },
+    {
       id: 8,
       title: {
         en: "TaskForge — Work-order & Operations SaaS",
