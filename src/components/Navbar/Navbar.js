@@ -2,98 +2,93 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import profile from '../../config/profile';
 import './Navbar.css';
+
+const sections = [
+  { id: 'inicio', key: 'home' },
+  { id: 'sobre-mi', key: 'about' },
+  { id: 'stack', key: 'skills' },
+  { id: 'proyectos', key: 'projects' },
+  { id: 'experiencia', key: 'experience' },
+  { id: 'servicios', key: 'services' },
+  { id: 'contacto', key: 'contact' },
+];
 
 const Navbar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [active, setActive] = useState('inicio');
 
-  // Manejar scroll para cambiar apariencia de navbar
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 30);
+      const offset = window.scrollY + 140;
+      let current = 'inicio';
+      sections.forEach(({ id }) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= offset) current = id;
+      });
+      setActive(current);
     };
-
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Función para manejar navegación suave
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false); // Cerrar menú móvil
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="nav-container">
-        <div className="nav-logo" onClick={() => scrollToSection('inicio')}>
-          <img src="/images/logo.png" alt="Centralized Code" className="logo-img" />
-          <span>Centralized Code</span>
-        </div>
-        
+        <button className="nav-logo" onClick={() => scrollToSection('inicio')} aria-label="Inicio">
+          <span className="nav-logo-bracket">&lt;</span>
+          {profile.shortName}
+          <span className="nav-logo-bracket"> /&gt;</span>
+        </button>
+
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection('inicio')}
-            >
-              {t('navbar.home')}
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection('servicios')}
-            >
-              {t('navbar.services')}
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection('nosotros')}
-            >
-              {t('navbar.about')}
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection('contacto')}
-            >
-              {t('navbar.contact')}
-            </button>
-          </li>
+          {sections.map(({ id, key }) => (
+            <li key={id}>
+              <button
+                className={`nav-link ${active === id ? 'active' : ''}`}
+                onClick={() => scrollToSection(id)}
+              >
+                {t(`navbar.${key}`)}
+              </button>
+            </li>
+          ))}
         </ul>
 
         <div className="nav-actions">
           <LanguageSelector />
-          <div 
+          <a className="nav-cv" href={profile.cv} download={profile.cvFileName}>
+            <i className="fas fa-download"></i>
+            <span>{t('navbar.cv')}</span>
+          </a>
+          <button
             className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-            onClick={toggleMenu}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
           >
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </div>
       </div>
     </motion.nav>
   );
 };
 
-export default Navbar; 
+export default Navbar;

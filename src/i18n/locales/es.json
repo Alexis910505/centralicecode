@@ -1,128 +1,120 @@
 {
   "navbar": {
     "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Stack",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
     "services": "Servicios",
-    "about": "Nosotros",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "cv": "Descargar CV"
   },
   "hero": {
-    "title": "Transformamos tu Negocio Digitalmente",
-    "subtitle": "Especialistas en servicios IT y marketing de redes sociales. Llevamos tu empresa al siguiente nivel con soluciones tecnológicas innovadoras y estrategias digitales efectivas.",
-    "cta_services": "Nuestros Servicios",
-    "cta_contact": "Contactar"
-  },
-  "services": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Soluciones integrales para el crecimiento digital de tu empresa",
-    "it_title": "Servicios IT",
-    "marketing_title": "Marketing Digital",
-    "it_services": {
-      "cloud": {
-        "title": "Infraestructura en la Nube",
-        "description": "Migración y gestión de servicios cloud (AWS, Azure, Google Cloud)"
-      },
-      "security": {
-        "title": "Ciberseguridad",
-        "description": "Protección integral de datos y sistemas empresariales"
-      },
-      "development": {
-        "title": "Desarrollo de Software",
-        "description": "Aplicaciones web y móviles personalizadas"
-      },
-      "support": {
-        "title": "Soporte Técnico",
-        "description": "Mantenimiento y soporte 24/7 para tu infraestructura"
-      }
-    },
-    "marketing_services": {
-      "social_media": {
-        "title": "Gestión de Redes Sociales",
-        "description": "Administración profesional de Facebook, Instagram, LinkedIn y más"
-      },
-      "advertising": {
-        "title": "Publicidad Digital",
-        "description": "Campañas efectivas en Google Ads, Facebook Ads y otras plataformas"
-      },
-      "seo": {
-        "title": "SEO y Analytics",
-        "description": "Optimización para motores de búsqueda y análisis de rendimiento"
-      },
-      "content": {
-        "title": "Creación de Contenido",
-        "description": "Content marketing estratégico para todas las plataformas"
-      }
-    }
+    "greeting": "// Hola, mi nombre es",
+    "description": "Ingeniero de software con más de 8 años construyendo productos web y móviles en producción de punta a punta: apps Flutter, frontends en React/Next.js y APIs con Node.js, NestJS y PostgreSQL. Fintech, logística, movilidad, educación y SaaS.",
+    "available": "Disponible para proyectos",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contáctame"
   },
   "stats": {
-    "clients": "Clientes Satisfechos",
-    "projects": "Proyectos Completados",
-    "support": "Soporte Técnico",
-    "experience": "Años de Experiencia"
+    "years": "Años de experiencia",
+    "projects": "Proyectos en producción",
+    "technologies": "Tecnologías",
+    "countries": "Países con clientes"
   },
   "about": {
-    "title": "Sobre Centralized Code",
-    "description": "Somos una empresa líder en soluciones tecnológicas y marketing digital, comprometida con el éxito de nuestros clientes. Nuestro equipo de expertos combina años de experiencia en tecnología con las últimas tendencias en marketing digital.",
-    "features": {
-      "certified": "Equipo certificado y experimentado",
-      "custom": "Soluciones personalizadas", 
-      "support": "Soporte continuo",
-      "results": "Resultados medibles"
+    "label": "01. Sobre mí",
+    "title": "Del móvil al servidor, todo el producto",
+    "p1": "Soy Ingeniero en Ciencias Informáticas (UCI, 2016) y llevo más de 8 años diseñando, desarrollando y desplegando aplicaciones para empresas de Norteamérica, Europa y Latinoamérica.",
+    "p2": "Empecé especializado en móvil con Flutter — apps de pagos, carga de vehículos eléctricos, logística y marketplaces — y hoy trabajo en todo el stack: Next.js y React en el frontend, NestJS/Node.js y PostgreSQL en el backend, con integraciones de pagos, geolocalización y tiempo real.",
+    "p3": "Me gusta tomar un producto desde la idea hasta producción: arquitectura, modelado de datos, UI, despliegue y CI/CD.",
+    "facts": {
+      "location": "Ubicación",
+      "languages": "Idiomas",
+      "education": "Educación",
+      "mode": "Modalidad",
+      "mode_value": "Remoto · Freelance · Tiempo completo"
+    }
+  },
+  "skills": {
+    "label": "02. Stack",
+    "title": "Tecnologías con las que trabajo",
+    "subtitle": "Herramientas que he usado en producción, en proyectos reales.",
+    "groups": {
+      "mobile": "Mobile",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Bases de datos",
+      "devops": "Cloud y DevOps",
+      "integrations": "Integraciones"
+    }
+  },
+  "portfolio": {
+    "label": "03. Proyectos",
+    "title": "Proyectos destacados",
+    "subtitle": "Una selección de productos web, móviles y juegos que he construido de punta a punta.",
+    "viewProject": "Sitio en vivo",
+    "previousImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "viewImage": "Ver imagen",
+    "viewGallery": "Galería"
+  },
+  "experience": {
+    "label": "04. Experiencia",
+    "title": "Trayectoria profesional",
+    "subtitle": "Más de 8 años trabajando en remoto con equipos distribuidos."
+  },
+  "services": {
+    "label": "05. Servicios",
+    "title": "¿En qué te puedo ayudar?",
+    "subtitle": "Disponible para proyectos freelance y posiciones full stack o mobile.",
+    "items": {
+      "web": {
+        "title": "Aplicaciones web",
+        "description": "Sitios y web apps con Next.js y React: rápidas, bilingües, con SEO y paneles de administración."
+      },
+      "api": {
+        "title": "APIs y backend",
+        "description": "APIs REST/GraphQL con NestJS o Node.js, PostgreSQL y Prisma, autenticación y roles."
+      },
+      "mobile": {
+        "title": "Apps móviles",
+        "description": "Apps Flutter para Android e iOS con arquitectura limpia, Firebase, mapas y notificaciones push."
+      },
+      "ecommerce": {
+        "title": "E-commerce y pagos",
+        "description": "Tiendas headless, reservas y checkout con Stripe, Square y pasarelas de pago."
+      },
+      "realtime": {
+        "title": "Tiempo real y geolocalización",
+        "description": "Rastreo en vivo, rutas, chats y dashboards sincronizados con Socket.IO y Firestore."
+      },
+      "devops": {
+        "title": "Despliegue y CI/CD",
+        "description": "Publicación en Vercel, Firebase y tiendas de apps, dominios, pipelines y monitoreo."
+      }
     }
   },
   "contact": {
-    "title": "Contáctanos",
-    "subtitle": "¿Listo para transformar tu negocio? Hablemos sobre tu proyecto",
+    "label": "06. Contacto",
+    "title": "Trabajemos juntos",
+    "subtitle": "Escríbeme por email o LinkedIn.",
     "info": {
       "email": "Email",
       "phone": "Teléfono",
       "location": "Ubicación"
     },
-    "form": {
-      "name": "Nombre completo",
-      "email": "Email",
-      "phone": "Teléfono",
-      "service": "Selecciona un servicio",
-      "service_options": {
-        "placeholder": "Selecciona un servicio",
-        "it": "Servicios IT",
-        "marketing": "Marketing Digital",
-        "both": "Ambos servicios"
-      },
-      "message": "Cuéntanos sobre tu proyecto",
-      "submit": "Enviar Mensaje",
-      "submitting": "Enviando...",
-      "errors": {
-        "name_required": "El nombre es obligatorio",
-        "name_min": "El nombre debe tener al menos 2 caracteres",
-        "name_max": "El nombre no puede exceder 50 caracteres",
-        "email_required": "El email es obligatorio",
-        "email_invalid": "Email inválido",
-        "phone_invalid": "Formato de teléfono inválido",
-        "service_required": "Selecciona un servicio",
-        "message_required": "El mensaje es obligatorio",
-        "message_min": "El mensaje debe tener al menos 10 caracteres",
-        "message_max": "El mensaje no puede exceder 500 caracteres"
-      },
-      "notifications": {
-        "success": "¡Mensaje enviado exitosamente! Te contactaremos pronto.",
-        "error": "Error al enviar el mensaje. Inténtalo de nuevo."
-      }
-    }
+    "copy_email": "Copiar email",
+    "copied": "¡Email copiado!",
+    "cta_title": "¿Tienes un proyecto en mente?",
+    "cta_text": "Cuéntame qué necesitas construir — una app móvil, una plataforma web o una API — y te respondo en menos de 24 horas. También estoy abierto a posiciones full stack o mobile."
   },
   "footer": {
-    "copyright": "© 2024 Centralized Code LLC. Todos los derechos reservados."
-  },
-  "portfolio": {
-    "title": "Nuestro Portafolio",
-    "subtitle": "Descubre algunos de los proyectos exitosos que hemos completado para nuestros clientes",
-    "viewProject": "Ver Proyecto",
-    "previousImage": "Imagen anterior",
-    "nextImage": "Imagen siguiente",
-    "viewImage": "Ver imagen",
-    "viewGallery": "Ver Galería"
+    "built": "Diseñado y desarrollado con React",
+    "rights": "Todos los derechos reservados."
   },
   "language": {
     "spanish": "Español",
     "english": "English"
   }
-} 
+}

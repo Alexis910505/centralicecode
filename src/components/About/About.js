@@ -1,102 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
+import profile from '../../config/profile';
 import './About.css';
 
 const About = () => {
-  const { t } = useTranslation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.3
-  });
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language?.startsWith('es') ? 'es' : 'en';
+  const [avatarError, setAvatarError] = useState(false);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const features = [
-    t('about.features.certified'),
-    t('about.features.custom'),
-    t('about.features.support'),
-    t('about.features.results')
+  const facts = [
+    { icon: 'fas fa-map-marker-alt', label: t('about.facts.location'), value: profile.location },
+    { icon: 'fas fa-language', label: t('about.facts.languages'), value: profile.languages[lang].join(' · ') },
+    { icon: 'fas fa-graduation-cap', label: t('about.facts.education'), value: `${profile.education.degree[lang]} — UCI ${profile.education.year}` },
+    { icon: 'fas fa-laptop-house', label: t('about.facts.mode'), value: t('about.facts.mode_value') },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { x: -20, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <section id="nosotros" className="about" ref={ref}>
-      <div className="container">
-        <div className="about-content">
-          <motion.div 
-            className="about-text"
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>{t('about.title')}</h2>
-            <p>
-              {t('about.description')}
-            </p>
-            <motion.div 
-              className="about-features"
-              variants={containerVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-            >
-              {features.map((feature, index) => (
-                <motion.div 
-                  key={index}
-                  className="feature"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, x: 10 }}
-                >
-                  <i className="fas fa-check-circle"></i>
-                  <span>{feature}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-          
-          <motion.div 
-            className="about-image"
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.div 
-              className="about-graphic"
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.3 }
-              }}
-            >
-              <motion.img 
-                src="/images/logo.png"
-                alt="Centralized Code"
-                className="about-logo"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
+    <section id="sobre-mi" className="about section" ref={ref}>
+      <div className="container about-content">
+        <motion.div
+          className="about-avatar"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="avatar-ring">
+            {avatarError ? (
+              <div className="avatar-fallback">{profile.initials}</div>
+            ) : (
+              <img src={profile.avatar} alt={profile.name} onError={() => setAvatarError(true)} />
+            )}
+          </div>
+          <div className="avatar-tag mono">
+            <i className="fas fa-code"></i> {profile.stats.years}+ {lang === 'es' ? 'años' : 'years'}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="about-text"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.15 }}
+        >
+          <span className="section-label mono">{t('about.label')}</span>
+          <h2 className="section-title">{t('about.title')}</h2>
+          <p>{t('about.p1')}</p>
+          <p>{t('about.p2')}</p>
+          <p>{t('about.p3')}</p>
+
+          <div className="about-facts">
+            {facts.map((f) => (
+              <div className="fact" key={f.label}>
+                <i className={f.icon}></i>
+                <div>
+                  <span className="fact-label mono">{f.label}</span>
+                  <span className="fact-value">{f.value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="about-actions">
+            <a className="btn-primary" href={profile.cv} download={profile.cvFileName}>
+              <i className="fas fa-file-download"></i> {t('navbar.cv')}
+            </a>
+            <a className="btn-secondary" href={profile.social.github} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i> GitHub
+            </a>
+            <a className="btn-secondary" href={profile.social.linkedin} target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default About; 
+export default About;

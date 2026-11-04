@@ -1,0 +1,136 @@
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(var(--cyan), var(--border-strong) 30%, var(--border));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  top: 28px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border-strong);
+}
+
+.timeline-dot.current {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+}
+
+.timeline-dot.current::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.timeline-card {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 20px;
+}
+
+.timeline-period {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.timeline-card h3 {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.timeline-company {
+  grid-column: 1 / -1;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--cyan);
+  margin: 4px 0 14px;
+}
+
+.timeline-highlights {
+  grid-column: 1 / -1;
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.timeline-highlights li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 8px;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.timeline-highlights li::before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--green);
+}
+
+.timeline-card .chips {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 26px;
+  }
+  .timeline::before {
+    left: 5px;
+  }
+  .timeline-dot {
+    left: -26px;
+    width: 12px;
+    height: 12px;
+  }
+  .timeline-card {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+  .timeline-period {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-bottom: 10px;
+    order: -1;
+  }
+  .timeline-card h3 {
+    grid-row: auto;
+  }
+}

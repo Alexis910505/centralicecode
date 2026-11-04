@@ -1,0 +1,44 @@
+.copy-email {
+  position: relative;
+  cursor: pointer;
+  font: inherit;
+  background: transparent;
+}
+
+.copy-email-tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+.copy-email:hover .copy-email-tip,
+.copy-email:focus-visible .copy-email-tip,
+.copy-email-tip.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.copy-email-tip.show {
+  color: var(--green);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.copy-email.btn-primary,
+.copy-email.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+}

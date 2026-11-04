@@ -1,30 +1,30 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import profile from '../../config/profile';
+import CopyEmail from '../CopyEmail/CopyEmail';
 import './Footer.css';
 
 const Footer = () => {
   const { t } = useTranslation();
-  
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      <div className="container">
-        <motion.div 
-          className="footer-content"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="footer-logo">
-            <img src="/images/logo.png" alt="Centralized Code" className="footer-logo-img" />
-            <span>Centralized Code LLC</span>
-          </div>
-          <p>{t('footer.copyright')}</p>
-        </motion.div>
+      <div className="container footer-content">
+        <div className="footer-logo mono">
+          <span className="nav-logo-bracket">&lt;</span>{profile.shortName}<span className="nav-logo-bracket"> /&gt;</span>
+        </div>
+        <div className="footer-social">
+          <a href={profile.social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
+          <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+          <CopyEmail />
+        </div>
+        <p className="footer-copy">
+          {t('footer.built')} · © {year} {profile.name}. {t('footer.rights')}
+        </p>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

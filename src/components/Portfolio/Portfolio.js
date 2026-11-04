@@ -6,6 +6,7 @@ import './Portfolio.css';
 
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
+  const lang = i18n.language?.startsWith('es') ? 'es' : 'en';
   const [activeFilter, setActiveFilter] = useState('all');
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -533,19 +534,9 @@ const Portfolio = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
 
   return (
-    <section className="portfolio" ref={ref}>
+    <section id="proyectos" className="portfolio section" ref={ref}>
       <div className="container">
         <motion.div 
           className="section-header"
@@ -553,7 +544,8 @@ const Portfolio = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <h2>{t('portfolio.title')}</h2>
+          <span className="section-label mono">{t('portfolio.label')}</span>
+          <h2 className="section-title">{t('portfolio.title')}</h2>
           <p>{t('portfolio.subtitle')}</p>
         </motion.div>
 
@@ -569,7 +561,7 @@ const Portfolio = () => {
               className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter.key)}
             >
-              {filter.label[i18n.language] || filter.label.en}
+              {filter.label[lang] || filter.label.en}
             </button>
           ))}
         </motion.div>
@@ -582,80 +574,80 @@ const Portfolio = () => {
         >
           <AnimatePresence>
             {filteredProjects.map((project) => (
-              <motion.div
+              <motion.article
                 key={project.id}
-                className="portfolio-item"
-                variants={itemVariants}
+                className="portfolio-item card"
                 layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
               >
-                <div className="project-image">
+                <button
+                  type="button"
+                  className={`project-image ${project.category === 'mobile-development' ? 'project-image--mobile' : ''}`}
+                  onClick={(e) => project.images && project.images.length > 0 && handleViewProject(project, e)}
+                  aria-label={t('portfolio.viewGallery')}
+                >
                   <img
-                    src={project.images && project.images.length > 0 
+                    src={project.images && project.images.length > 0
                       ? (project.id === 3 ? "/images/POP/POP.png" : project.images[activeImages[project.id] ?? 0])
                       : project.image}
-                    alt={project.title[i18n.language] || project.title.en}
+                    alt={project.title[lang] || project.title.en}
+                    loading="lazy"
                   />
-                  <div className="project-overlay">
-                    <div className="overlay-content">
-                      <h3>{project.title[i18n.language] || project.title.en}</h3>
-                      <p>{project.description[i18n.language] || project.description.en}</p>
-                      <div className="project-technologies">
-                        {project.technologies.map((tech, index) => (
-                          <span key={index} className="tech-tag">{tech}</span>
-                        ))}
-                      </div>
-                      <div className="project-results">
-                        <i className="fas fa-chart-line"></i>
-                        <span>{project.results[i18n.language] || project.results.en}</span>
-                      </div>
-                      <div className="project-actions">
-                        {project.images && project.images.length > 0 ? (
-                          <motion.button
-                            type="button"
-                            className="project-link"
-                            onClick={(e) => handleViewProject(project, e)}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <i className="fas fa-images"></i>
-                            {t('portfolio.viewGallery', { defaultValue: 'Ver Galería' })}
-                          </motion.button>
-                        ) : (
-                          <motion.a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <i className="fas fa-external-link-alt"></i>
-                            {t('portfolio.viewProject')}
-                          </motion.a>
-                        )}
-                        {project.images && project.images.length > 0 && project.link && project.link !== '#' && (
-                          <motion.a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link project-link-secondary"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <i className="fas fa-external-link-alt"></i>
-                            {t('portfolio.viewProject')}
-                          </motion.a>
-                        )}
-                      </div>
-                    </div>
+                  {project.images && project.images.length > 1 && (
+                    <span className="project-image-count mono">
+                      <i className="fas fa-images"></i> {project.images.length}
+                    </span>
+                  )}
+                </button>
+
+                <div className="project-info">
+                  <div className="project-meta">
+                    <span className="project-category mono">
+                      {(filters.find((f) => f.key === project.category)?.label[lang]) || project.category}
+                    </span>
+                    {project.link && project.link !== '#' && (
+                      <span className="project-live mono"><span className="pulse-dot"></span>Live</span>
+                    )}
+                  </div>
+                  <h3>{project.title[lang] || project.title.en}</h3>
+                  <p>{project.description[lang] || project.description.en}</p>
+                  <div className="chips">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="chip">{tech}</span>
+                    ))}
+                  </div>
+                  <div className="project-results">
+                    <i className="fas fa-bolt"></i>
+                    <span>{project.results[lang] || project.results.en}</span>
+                  </div>
+                  <div className="project-actions">
+                    {project.images && project.images.length > 0 && (
+                      <button
+                        type="button"
+                        className="btn-secondary"
+                        onClick={(e) => handleViewProject(project, e)}
+                      >
+                        <i className="fas fa-images"></i>
+                        {t('portfolio.viewGallery')}
+                      </button>
+                    )}
+                    {project.link && project.link !== '#' && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                      >
+                        <i className="fas fa-external-link-alt"></i>
+                        {t('portfolio.viewProject')}
+                      </a>
+                    )}
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
@@ -685,7 +677,7 @@ const Portfolio = () => {
             </button>
             
             <div className="gallery-modal-header">
-              <h3>{galleryModal.title[i18n.language] || galleryModal.title.en}</h3>
+              <h3>{galleryModal.title[lang] || galleryModal.title.en}</h3>
               <p className="gallery-counter">
                 {((activeImages[galleryModal.id] ?? 0) + 1)} / {galleryModal.images.length}
               </p>
@@ -708,7 +700,7 @@ const Portfolio = () => {
               >
                 <img
                   src={galleryModal.images[activeImages[galleryModal.id] ?? 0]}
-                  alt={`${galleryModal.title[i18n.language] || galleryModal.title.en} - Imagen ${((activeImages[galleryModal.id] ?? 0) + 1)}`}
+                  alt={`${galleryModal.title[lang] || galleryModal.title.en} - Imagen ${((activeImages[galleryModal.id] ?? 0) + 1)}`}
                   className="gallery-modal-image"
                   style={{
                     transform: `scale(${imageZoom.scale}) translate(${imageZoom.x / imageZoom.scale}px, ${imageZoom.y / imageZoom.scale}px)`,
