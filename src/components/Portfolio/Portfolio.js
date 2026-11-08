@@ -87,6 +87,38 @@ const Portfolio = () => {
       link: "https://www.kidoedtech.com/"
     },
     {
+      id: 15,
+      title: {
+        en: "Isla Market — Multi-vendor Marketplace for Cuba",
+        es: "Isla Market — Marketplace multi-vendedor para Cuba"
+      },
+      description: {
+        en: "Isla Market is a production multi-vendor marketplace: verified stores publish their catalog, buyers shop with cart, coupons and per-store payment methods, and every order is tracked through shipping, cancellations, returns and disputes. A NestJS + Prisma API with a 46-model PostgreSQL schema handles orders, payments, wallets, seller commissions and ledgers, chat, reviews, Q&A and email/push notifications, serving a React web store and a Flutter mobile app with Firebase Auth.",
+        es: "Isla Market es un marketplace multi-vendedor en producción: tiendas verificadas publican su catálogo y los compradores compran con carrito, cupones y el método de pago que elige cada tienda, con seguimiento de cada pedido, cancelaciones, devoluciones y disputas. Una API NestJS + Prisma con un esquema PostgreSQL de 46 modelos gestiona pedidos, pagos, billeteras, comisiones y contabilidad de vendedores, chat, reseñas, preguntas y avisos por email y push, y sirve a una tienda web React y una app móvil Flutter con Firebase Auth."
+      },
+      category: "web-development",
+      images: [
+        "/images/IslaMarket/02-home-sections.png",
+        "/images/IslaMarket/01-home.png",
+        "/images/IslaMarket/04-catalog.png",
+        "/images/IslaMarket/06-product.png",
+        "/images/IslaMarket/07-product-details.png",
+        "/images/IslaMarket/08-product-2.png",
+        "/images/IslaMarket/10-product-3.png",
+        "/images/IslaMarket/09-store.png",
+        "/images/IslaMarket/05-search.png",
+        "/images/IslaMarket/03-home-deals.png",
+        "/images/IslaMarket/11-collections.png",
+        "/images/IslaMarket/12-login.png"
+      ],
+      technologies: ["NestJS", "Prisma", "PostgreSQL", "React", "Vite", "Flutter", "Firebase Auth", "Swagger"],
+      results: {
+        en: "Full marketplace: orders, payments, commissions, disputes & returns",
+        es: "Marketplace completo: pedidos, pagos, comisiones, disputas y devoluciones"
+      },
+      link: "https://islamarket-cu.vercel.app/"
+    },
+    {
       id: 8,
       title: {
         en: "TaskForge — Work-order & Operations SaaS",
@@ -117,6 +149,33 @@ const Portfolio = () => {
       results: {
         en: "Multi-tenant Kanban, live ops & reporting",
         es: "Kanban multi-tenant, ops en vivo y reportes"
+      },
+      link: "#"
+    },
+    {
+      id: 16,
+      title: {
+        en: "Snowmass Transit — Real-time Fleet & Route Tracking",
+        es: "Snowmass Transit — Rastreo de flota y rutas en tiempo real"
+      },
+      description: {
+        en: "Snowmass Transit is a transit-operations platform for Snowmass Village, Colorado. Drivers run a Flutter app that streams their GPS position; the Next.js admin panel shows every vehicle live on a map over WebSockets and manages routes, 69 stops, vehicles, drivers, scheduled trips and recurring maintenance tasks, with dashboards and CSV/PDF exports. Backend: Node.js/Express, Prisma and PostgreSQL, JWT auth with roles, Swagger docs and Firebase push notifications.",
+        es: "Snowmass Transit es una plataforma de operaciones de transporte para Snowmass Village, Colorado. Los choferes usan una app Flutter que envía su posición GPS y el panel en Next.js muestra cada vehículo en vivo en el mapa vía WebSockets, además de gestionar rutas, 69 paradas, vehículos, conductores, viajes programados y tareas de mantenimiento recurrentes, con dashboards y exportación CSV/PDF. Backend: Node.js/Express, Prisma y PostgreSQL, JWT con roles, Swagger y notificaciones push con Firebase."
+      },
+      category: "web-development",
+      images: [
+        "/images/SnowmassTransit/03-tracking.png",
+        "/images/SnowmassTransit/01-dashboard.png",
+        "/images/SnowmassTransit/02-dashboard-charts.png",
+        "/images/SnowmassTransit/04-routes.png",
+        "/images/SnowmassTransit/06-trips.png",
+        "/images/SnowmassTransit/05-drivers.png",
+        "/images/SnowmassTransit/07-maintenance.png"
+      ],
+      technologies: ["Next.js", "Node.js", "Express", "Socket.IO", "Prisma", "PostgreSQL", "Leaflet", "Flutter"],
+      results: {
+        en: "Live GPS tracking for a mountain-town bus fleet",
+        es: "Rastreo GPS en vivo de la flota de buses de un pueblo de montaña"
       },
       link: "#"
     },
@@ -234,6 +293,57 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: 17,
+      title: {
+        en: "Arena Stack — Dota 2 Tournament Analytics & Discord Bots",
+        es: "Arena Stack — Analítica de torneos de Dota 2 y bots de Discord"
+      },
+      description: {
+        en: "Arena Stack turns official Dota 2 replays into stats for a gaming community: players upload a .dem file and a Go parser (dotabuff/manta) extracts picks and bans, K/D/A, gold and XP timelines, items and minute-by-minute events. The site adds tournaments, hero meta, standings and a rating-based ELO, plus several serverless Discord bots (match rooms, announcements, moderation) and an admin panel to toggle them, all on Vercel Functions with Upstash Redis, Vercel Blob and Discord OAuth.",
+        es: "Arena Stack convierte los replays oficiales de Dota 2 en estadísticas para una comunidad: los jugadores suben su archivo .dem y un parser en Go (dotabuff/manta) extrae picks y bans, K/D/A, curvas de oro y XP, items y eventos minuto a minuto. La web suma torneos, meta de héroes, clasificaciones y un ELO por rating, además de varios bots de Discord serverless (salas de partida, avisos y moderación) y un panel para activarlos, todo en Vercel Functions con Upstash Redis, Vercel Blob y login con Discord."
+      },
+      category: "game",
+      images: [
+        "/images/ArenaStack/01-home.png",
+        "/images/ArenaStack/04-meta.png",
+        "/images/ArenaStack/02-tournaments.png",
+        "/images/ArenaStack/03-heroes.png",
+        "/images/ArenaStack/05-elo.png"
+      ],
+      technologies: ["Node.js", "Go", "Vercel Functions", "Upstash Redis", "Discord API", "Firebase", "OpenDota API"],
+      results: {
+        en: "Replay parsing, tournaments, ELO & 3 Discord bots in one deploy",
+        es: "Parseo de replays, torneos, ELO y 3 bots de Discord en un solo despliegue"
+      },
+      link: "https://discord-bot-vercel-woad.vercel.app/"
+    },
+    {
+      id: 18,
+      title: {
+        en: "Cretalia — Game Server Community Platform",
+        es: "Cretalia — Plataforma para servidor de juego comunitario"
+      },
+      description: {
+        en: "Cretalia runs a community server for The Isle: Evrima. Behind the Next.js + Firebase site sits a microservice backend: a public API gateway with OpenAPI/Swagger docs, an identity service with Steam and Discord OAuth, account and commerce services that process Tebex payment webhooks (VIP queue priority and cosmetic skins), and a single game-ops gateway that owns every RCON/SSH call to the game server, so the Discord bot, web and scheduled jobs never touch it directly.",
+        es: "Cretalia gestiona un servidor comunitario de The Isle: Evrima. Detrás del sitio en Next.js + Firebase hay un backend de microservicios: un gateway público con documentación OpenAPI/Swagger, un servicio de identidad con OAuth de Steam y Discord, servicios de cuenta y comercio que procesan los webhooks de pago de Tebex (prioridad VIP y skins cosméticas) y un único gateway game-ops que concentra todas las llamadas RCON/SSH al servidor de juego, así el bot de Discord, la web y los jobs nunca lo tocan directamente."
+      },
+      category: "game",
+      images: [
+        "/images/Cretalia/01-home.png",
+        "/images/Cretalia/02-skins.png",
+        "/images/Cretalia/03-support.png",
+        "/images/Cretalia/04-rules.png",
+        "/images/Cretalia/05-discord.png",
+        "/images/Cretalia/06-about.png"
+      ],
+      technologies: ["Next.js", "Node.js", "Microservices", "OpenAPI", "Firebase", "Steam OAuth", "Discord Bot", "Tebex"],
+      results: {
+        en: "5 microservices behind one gateway, payments & OAuth",
+        es: "5 microservicios tras un gateway, pagos y OAuth"
+      },
+      link: "https://web-next-jet.vercel.app/"
+    },
+    {
       id: 9,
       title: {
         en: "Crimson Ascension — Space Strategy MMO (In Development)",
@@ -286,25 +396,6 @@ const Portfolio = () => {
       link: "#"
     },
     {
-      id: 2,
-      title: {
-        en: "Digital Marketing Campaign",
-        es: "Campaña de Marketing Digital"
-      },
-      description: {
-        en: "SEO and social media strategy that boosted organic traffic significantly",
-        es: "Estrategia SEO y redes sociales que incrementó significativamente el tráfico orgánico"
-      },
-      category: "digital-marketing",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["Google Ads", "Facebook Ads", "Analytics", "SEO"],
-      results: {
-        en: "250% traffic increase",
-        es: "250% aumento en tráfico"
-      },
-      link: "#"
-    },
-    {
       id: 3,
       title: {
         en: "Project P.O.P. — Logistics & Transportation Mobile App",
@@ -343,7 +434,7 @@ const Portfolio = () => {
       },
       category: "web-development",
       image: "/images/hero_image.jpg",
-      technologies: ["React.js 18.2.0", "JavaScript ES6+", "CSS3", "react-i18next", "GitHub Pages"],
+      technologies: ["React.js 18.2.0", "JavaScript ES6+", "CSS3", "react-i18next", "Vercel"],
       results: {
         en: "Professional medical presence",
         es: "Presencia médica profesional"
@@ -362,50 +453,12 @@ const Portfolio = () => {
       },
       category: "web-development",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
-      technologies: ["HTML5", "CSS3 (ITCSS y BEM)", "JavaScript ES6+", "i18n personalizado", "GitHub Pages"],
+      technologies: ["HTML5", "CSS3 (ITCSS y BEM)", "JavaScript ES6+", "i18n personalizado", "Vercel"],
       results: {
         en: "50,000+ medical articles accessible",
         es: "Más de 50,000 artículos médicos accesibles"
       },
       link: "https://www.drgalallc.com/"
-    },
-    {
-      id: 5,
-      title: {
-        en: "Social Media Strategy",
-        es: "Estrategia de Redes Sociales"
-      },
-      description: {
-        en: "Complete social media management with content creation and community building",
-        es: "Gestión completa de redes sociales con creación de contenido y construcción de comunidad"
-      },
-      category: "digital-marketing",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-      technologies: ["Content Creation", "Instagram", "Facebook", "LinkedIn"],
-      results: {
-        en: "500% engagement growth",
-        es: "500% crecimiento en engagement"
-      },
-      link: "#"
-    },
-    {
-      id: 6,
-      title: {
-        en: "Enterprise Software",
-        es: "Software Empresarial"
-      },
-      description: {
-        en: "Custom enterprise solution for workflow automation and team collaboration",
-        es: "Solución empresarial personalizada para automatización y colaboración en equipo"
-      },
-      category: "software-development",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["Python", "Django", "PostgreSQL", "Docker"],
-      results: {
-        en: "40% productivity increase",
-        es: "40% aumento en productividad"
-      },
-      link: "#"
     }
   ], []);
 
@@ -521,7 +574,7 @@ const Portfolio = () => {
   ];
 
   const filteredProjects = activeFilter === 'all' 
-    ? projects.filter(project => project.category !== 'digital-marketing' && project.category !== 'software-development')
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   const containerVariants = {
